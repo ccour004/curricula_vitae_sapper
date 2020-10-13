@@ -20,4 +20,4 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.CLIENT_PAT }}
         BRANCH: gh-pages
-        FOLDER: __sapper__/export/curricula_vitae_sapper
+        FOLDER: __sapper__/export
