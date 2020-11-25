@@ -114,8 +114,8 @@ function updateSvelteFiles() {
 			]
 		},
 		{
-			view: 'routes/blog/index',
-			vars: [{ name: 'posts', type: '{ slug: string; title: string, html: any }[]' }],
+			view: 'routes/index',
+			vars: [{ name: 'posts', type: '{ slug: string, alt: string, src: string,  title: string, date: string, html: any }[]' }],
 			contextModule: [
 				{
 					js: '.then(r => r.json())',
@@ -123,13 +123,13 @@ function updateSvelteFiles() {
 				},
 				{
 					js: '.then(posts => {',
-					ts: '.then((posts: { slug: string; title: string, html: any }[]) => {'
+					ts: '.then((posts: { slug: string, alt: string, src: string, title: string, date: string, html: any }[]) => {'
 				}
 			]
 		},
 		{
-			view: 'routes/blog/[slug]',
-			vars: [{ name: 'post', type: '{ slug: string; title: string, html: any }' }]
+			view: 'routes/[slug]',
+			vars: [{ name: 'post', type: '{ slug: string, alt: string, src: string, title: string, date: string, html: any }' }]
 		}
 	].forEach(updateSingleSvelteFile);
 }
